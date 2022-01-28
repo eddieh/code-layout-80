@@ -1,8 +1,18 @@
 /* style.css */
 
-/* set to zero to display the maximum number of columns */
 body {
     margin: 0;
+}
+
+.page {
+    width: 100%;
+    overflow: hidden;
+}
+
+.bodycopy {
+    padding: 0 1rem;
+    margin: 0 auto;
+    position: relative;
 }
 
 /* Safari default monospace font: Courier 13px */
@@ -11,8 +21,19 @@ pre, code {
 }
 
 pre {
-    width: 100%;
     overflow-x: scroll;
+    background-color: #dedeed;
+    padding: 16px 0;            /* enough padding for the scrollbar */
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translate(-50%);
+    clear: both;
+}
+
+pre code {
+    display: inline-block;
+    padding: 0 1rem;
 }
 
 /* Safari default settings on 320px wide device can show 41 characters:
