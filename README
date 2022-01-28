@@ -1,7 +1,8 @@
-Web Template
-============
+80 Column Code Layout
+=====================
 
-Basic HTML5 web template. Nothing fancy. No dependencies.
+Web layout experiment attempting to render 80 columns of code on small
+screens.
 
 
 Usage
