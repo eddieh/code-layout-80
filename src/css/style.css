@@ -1,1 +1,70 @@
 /* style.css */
+
+/* set to zero to display the maximum number of columns */
+body {
+    margin: 0;
+}
+
+/* Safari default monospace font: Courier 13px */
+pre, code {
+    text-rendering: optimizeLegibility;
+}
+
+pre {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+/* Safari default settings on 320px wide device can show 41 characters:
+ *
+ *   0123456789abcdefghijklmnopqrstuvwxyzABCDE
+ *
+ * With this media query 65 characters can be displayed:
+ *
+ *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:
+ *
+ * Smaller would probably not be legible.
+ *
+ */
+@media (min-width: 320px) {
+    pre {
+        font-size: 9px;
+        letter-spacing: -.5px;
+    }
+}
+
+/* Safari default settings on 375px wide device can show 48 characters:
+ *
+ *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKL
+ *
+ * With this media query 72 characters can be displayed:
+ *
+ *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?
+ *
+ * Smaller would probably not be legible.
+ *
+ */
+@media (min-width: 375px) {
+    pre {
+        font-size: 9px;
+        letter-spacing: -.25px;
+    }
+}
+
+/* Safari default settings on 414px wide device can show 53 characters:
+ *
+ *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQ
+ *
+ * With this media query 80 characters can be displayed:
+ *
+ *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?&<>()[]{
+ *
+ * Smaller would probably not be legible.
+ *
+ */
+@media (min-width: 414px) {
+    pre {
+        font-size: 9px;
+        letter-spacing: -.25px;
+    }
+}
