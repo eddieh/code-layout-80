@@ -13,17 +13,20 @@ body {
     padding: 0 1rem;
     margin: 0 auto;
     position: relative;
+    font-family: reset;
+    font-size: reset;
+    letter-spacing: reset;
 }
 
-/* Safari default monospace font: Courier 13px */
 pre, code {
+    font-family: Menlo;
     text-rendering: optimizeLegibility;
 }
 
 pre {
     overflow-x: scroll;
     background-color: #dedeed;
-    padding: 16px 0;            /* enough padding for the scrollbar */
+    padding: 16px 0;            /* enough padding for the horizontal scrollbar */
     position: relative;
     width: 100vw;
     left: 50%;
@@ -32,60 +35,52 @@ pre {
 }
 
 pre code {
-    display: inline-block;
-    padding: 0 1rem;
+    display: block;
+    padding: 0 16px;            /* enough padding for the vertical scrollbar */
 }
 
-/* Safari default settings on 320px wide device can show 41 characters:
- *
- *   0123456789abcdefghijklmnopqrstuvwxyzABCDE
- *
- * With this media query 65 characters can be displayed:
- *
- *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:
- *
- * Smaller would probably not be legible.
- *
- */
 @media (min-width: 320px) {
-    pre {
+    pre code {
         font-size: 9px;
         letter-spacing: -.5px;
     }
 }
 
-/* Safari default settings on 375px wide device can show 48 characters:
- *
- *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKL
- *
- * With this media query 72 characters can be displayed:
- *
- *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?
- *
- * Smaller would probably not be legible.
- *
- */
 @media (min-width: 375px) {
-    pre {
+    pre code {
         font-size: 9px;
         letter-spacing: -.25px;
     }
 }
 
-/* Safari default settings on 414px wide device can show 53 characters:
- *
- *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQ
- *
- * With this media query 80 characters can be displayed:
- *
- *   0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?&<>()[]{
- *
- * Smaller would probably not be legible.
- *
- */
 @media (min-width: 414px) {
-    pre {
+    pre code {
         font-size: 9px;
         letter-spacing: -.25px;
+    }
+}
+
+@media (min-width: 460px) and (max-width: 800px) {
+    pre code {
+        font-size: calc(100vw / 48);
+        letter-spacing: -.25px;
+    }
+}
+
+@media (min-width: 800px) {
+    /* ATTN: this must be set to the same font used to display code at the
+       maximum size */
+    .page-width {
+        font-family: Menlo;
+        font-size: 17px;
+        letter-spacing: normal;
+        margin: 0 auto;
+        max-width: 80ch;
+    }
+    pre code {
+        font-size: 17px;
+        letter-spacing: normal;
+        max-width: 80ch;
+        margin: 0 calc((100vw - 80ch) / 2 );
     }
 }
