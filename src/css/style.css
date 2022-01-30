@@ -1,5 +1,9 @@
 /* style.css */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
@@ -74,13 +78,13 @@ pre code {
         font-family: Menlo;
         font-size: 17px;
         letter-spacing: normal;
+        max-width: calc(80ch + 2 * 16px);
         margin: 0 auto;
-        max-width: 80ch;
     }
     pre code {
         font-size: 17px;
         letter-spacing: normal;
-        max-width: 80ch;
-        margin: 0 calc((100vw - 80ch) / 2 );
+        max-width: calc(80ch + 2 * 16px);
+        margin: 0 auto;
     }
 }
